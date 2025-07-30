@@ -1,9 +1,4 @@
 
-import PlatformRegistry from './classes';
-import UsageTracker     from './classes';
-import RequestMonitor   from './classes';
-import SecurityConfig   from './classes';
-
 // Main initialization and coordination
 
 class BackgroundService {
