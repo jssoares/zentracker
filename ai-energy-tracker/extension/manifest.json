@@ -14,17 +14,17 @@
     "https://gemini.google.com/*"
   ],
   
-"background": {
-  "scripts": [
-    "classes/SecurityConfig.js",
-    "classes/AIPlatform.js", 
-    "classes/PlatformRegistry.js",
-    "classes/UsageTracker.js",
-    "classes/RequestMonitor.js",
-    "background.js"
-  ],
-  "persistent": true
-}
+  "background": {
+    "scripts": [
+      "classes/SecurityConfig.js",
+      "classes/AIPlatform.js", 
+      "classes/PlatformRegistry.js",
+      "classes/UsageTracker.js",
+      "classes/RequestMonitor.js",
+      "background.js"
+    ],
+    "persistent": true
+  },
   
   "content_scripts": [
     {
