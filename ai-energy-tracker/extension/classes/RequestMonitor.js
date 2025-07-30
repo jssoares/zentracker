@@ -26,6 +26,7 @@ class RequestMonitor {
   }
 
   handleRequest(details) {
+    console.log('Request intercepted:', details.method, details.url);
     try {
       if (details.method !== 'POST') return;
       

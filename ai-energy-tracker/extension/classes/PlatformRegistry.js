@@ -8,7 +8,7 @@ class PlatformRegistry {
   initializePlatforms() {
     this.platforms.set('claude', new AIPlatform(
       'Claude', 'claude.ai', 0.0005, 
-      ['/api/organizations/', '/api/chat_conversations/']
+      ['/api/organizations/']
     ));
     
     this.platforms.set('chatgpt', new AIPlatform(
