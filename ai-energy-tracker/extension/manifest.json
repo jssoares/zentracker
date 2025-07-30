@@ -1,0 +1,58 @@
+{
+  "manifest_version": 2,
+  "name": "AI Energy Tracker",
+  "version": "0.1.0",
+  "description": "Monitor the environmental impact of your AI interactions",
+  
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "tabs",
+    "https://claude.ai/*",
+    "https://chat.openai.com/*",
+    "https://gemini.google.com/*"
+  ],
+  
+"background": {
+  "scripts": [
+    "classes/SecurityConfig.js",
+    "classes/AIPlatform.js", 
+    "classes/PlatformRegistry.js",
+    "classes/UsageTracker.js",
+    "classes/RequestMonitor.js",
+    "background.js"
+  ],
+  "persistent": true
+}
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://claude.ai/*",
+        "https://chat.openai.com/*", 
+        "https://gemini.google.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Energy Tracker",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  
+  "web_accessible_resources": []
+}

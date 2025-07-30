@@ -1,0 +1,73 @@
+# Firefox extension artifacts
+web-ext-artifacts/
+*.xpi
+*.zip
+
+# Development files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories (if you add build tools later)
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs (future-proofing)
+dist/
+build/
+*.tgz
+
+# Testing
+coverage/
+.nyc_output
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+
+# Firefox profile data (if you test with profiles)
+firefox-profile/
+
+# Extension signing keys (never commit these!)
+*.pem
+*.p12
+web-ext-config.js
+
+# Backup files
+*.bak
+*.backup
