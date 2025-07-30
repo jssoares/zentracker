@@ -88,4 +88,20 @@ class UsageTracker {
     }
     return sanitized;
   }
+
+  async loadStoredData() {
+    const result = await browser.storage.local.get('dailyUsage');
+    this.dailyUsage = result.dailyUsage || {};
+    this.initializeTodayIfNeeded();
+  }
+
+  initializeTodayIfNeeded() {
+    if (!this.dailyUsage[this.today]) {
+      this.dailyUsage[this.today] = {
+        claude: { sessions: 0, tokens: 0, energy: 0 },
+        chatgpt: { sessions: 0, tokens: 0, energy: 0 },
+        gemini: { sessions: 0, tokens: 0, energy: 0 }
+      };
+    }
+  }
 }

@@ -7,6 +7,24 @@ class RequestMonitor {
     this.initializeListeners();
   }
 
+  initializeListeners() {
+    browser.webRequest.onBeforeRequest.addListener(
+      (details) => this.handleRequest(details),
+      {
+        urls: [
+          "https://claude.ai/*",
+          "https://chat.openai.com/*", 
+          "https://gemini.google.com/*"
+        ]
+      },
+      ["requestBody"]
+    );
+  }
+
+  startMonitoring() {
+    console.log('Request monitoring started');
+  }
+
   handleRequest(details) {
     try {
       if (details.method !== 'POST') return;
