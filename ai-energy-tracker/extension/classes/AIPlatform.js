@@ -29,4 +29,8 @@ class AIPlatform {
     return url.hostname === this.hostname && 
            this.apiPatterns.some(pattern => url.pathname.includes(pattern));
   }
+
+  calculateEnergy(tokenCount) {
+    return tokenCount * this.energyPerToken;
+  }
 }
