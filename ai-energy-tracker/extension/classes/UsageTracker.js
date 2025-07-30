@@ -1,6 +1,7 @@
 // Secure Usage Tracker
 class UsageTracker {
-  constructor() {
+  constructor(platformRegistry) {
+    this.platformRegistry = platformRegistry;
     this.dailyUsage = {};
     this.today = new Date().toISOString().split('T')[0];
     this.loadStoredData();
@@ -27,7 +28,7 @@ class UsageTracker {
     usage.sessions += 1;
     usage.tokens += tokenCount;
     
-    const platform = platformRegistry.getPlatform(platformKey);
+    const platform = this.platformRegistry.getPlatform(platformKey);
     usage.energy += platform.calculateEnergy(tokenCount);
     
     this.saveToStorage();

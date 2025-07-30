@@ -4,7 +4,7 @@
 class BackgroundService {
   constructor() {
     this.platformRegistry = new PlatformRegistry();
-    this.usageTracker     = new UsageTracker();
+    this.usageTracker     = new UsageTracker(this.platformRegistry);
     this.requestMonitor   = new RequestMonitor(this.usageTracker, this.platformRegistry);
     this.securityConfig   = new SecurityConfig();
   }
