@@ -13,8 +13,8 @@ class PlatformRegistry {
     ));
     
     this.platforms.set('chatgpt', new AIPlatform(
-      'ChatGPT', 'chat.openai.com', 0.0003,
-      ['/backend-api/conversation', '/backend-api/chat'],
+      'ChatGPT', 'chatgpt.com', 0.0003,
+      ['/backend-api/r/conversation', '/backend-api/conversation', '/backend-api/r/', '/backend-api/'],
       0.000002
     ));
     

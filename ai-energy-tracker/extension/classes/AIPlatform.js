@@ -9,7 +9,7 @@ class AIPlatform {
   }
 
   validateHostname(hostname) {
-    const allowed = ['claude.ai', 'chat.openai.com', 'gemini.google.com'];
+    const allowed = ['claude.ai', 'chatgpt.com', 'gemini.google.com'];
     if (!allowed.includes(hostname)) {
       throw new Error(`Unauthorized hostname: ${hostname}`);
     }

@@ -10,7 +10,7 @@
     "storage",
     "tabs",
     "https://claude.ai/*",
-    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
     "https://gemini.google.com/*"
   ],
   
@@ -30,7 +30,7 @@
     {
       "matches": [
         "https://claude.ai/*",
-        "https://chat.openai.com/*", 
+        "https://chatgpt.com/*",
         "https://gemini.google.com/*"
       ],
       "js": ["content.js"],

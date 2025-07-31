@@ -13,8 +13,8 @@ class RequestMonitor {
       {
         urls: [
           "https://claude.ai/*",
-          "https://chat.openai.com/*", 
-          "https://gemini.google.com/*"
+          "https://chatgpt.com/*",
+          "https://gemini.google.com/*",
         ]
       },
       ["requestBody"]
