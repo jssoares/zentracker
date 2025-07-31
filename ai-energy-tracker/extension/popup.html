@@ -56,6 +56,14 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
+
+    .stat-card.energy-card {
+      background: var(--energy-color, rgba(255,255,255,0.15));
+    }
+
+    .stat-card.water-card {
+      background: var(--water-color, rgba(255,255,255,0.15));
+    }
     
     .platforms {
       padding: 0 20px 20px;
@@ -107,14 +115,14 @@
         <div class="stat-label">Sessions Today</div>
       </div>
       
-      <div class="stat-card">
+      <div class="stat-card energy-card">
         <div class="stat-value" id="total-energy">0 Wh</div>
         <div class="stat-label">Energy Consumed</div>
       </div>
 
-      <div class="stat-card">
-      <div class="stat-value" id="total-water">0 ml</div>
-      <div class="stat-label">Water Used</div>
+      <div class="stat-card water-card">
+        <div class="stat-value" id="total-water">0 ml</div>
+        <div class="stat-label">Water Used</div>
       </div>
 
       <div class="stat-card">
