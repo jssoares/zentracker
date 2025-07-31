@@ -20,7 +20,7 @@ class PlatformRegistry {
     
     this.platforms.set('gemini', new AIPlatform(
       'Gemini', 'gemini.google.com', 0.0004,
-      ['/api/generate', '/api/chat'],
+      ['/batchexecute'],
       0.000002
     ));
   }
