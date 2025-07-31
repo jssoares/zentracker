@@ -1,9 +1,10 @@
 // Enhanced Platform class with validation
 class AIPlatform {
-  constructor(name, hostname, energyPerToken, apiPatterns) {
+  constructor(name, hostname, energyPerToken, apiPatterns, waterPerToken) {
     this.name = SecurityConfig.sanitizeData(name);
     this.hostname = this.validateHostname(hostname);
     this.energyPerToken = this.validateNumber(energyPerToken, 0, 1);
+    this.waterPerToken = waterPerToken; // ← New water coefficient
     this.apiPatterns = apiPatterns.map(p => SecurityConfig.sanitizeData(p));
   }
 
@@ -33,4 +34,9 @@ class AIPlatform {
   calculateEnergy(tokenCount) {
     return tokenCount * this.energyPerToken;
   }
+
+  calculateWater(tokenCount) {
+    return tokenCount * this.waterPerToken;
+  }
+
 }

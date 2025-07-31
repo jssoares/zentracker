@@ -3,18 +3,142 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { width: 300px; padding: 20px; font-family: Arial, sans-serif; }
-    .metric { margin: 10px 0; }
+    body {
+      width: 320px;
+      padding: 0;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+    }
+    
+    .header {
+      padding: 20px;
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+    }
+    
+    .header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .date {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+    
+    .stats {
+      padding: 20px;
+    }
+    
+    .stat-card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .platforms {
+      padding: 0 20px 20px;
+    }
+    
+    .platform {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .platform:last-child {
+      border-bottom: none;
+    }
+    
+    .platform-name {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .platform-sessions {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 40px 20px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
-  <h3>AI Energy Tracker</h3>
-  <div id="loading">Loading usage data...</div>
-  <div id="usage" style="display:none;">
-    <div class="metric">Claude: <span id="claude-sessions">0</span> sessions</div>
-    <div class="metric">ChatGPT: <span id="chatgpt-sessions">0</span> sessions</div>
-    <div class="metric">Gemini: <span id="gemini-sessions">0</span> sessions</div>
+  <div class="header">
+    <h2>AI Energy Tracker</h2>
+    <div class="date" id="current-date"></div>
   </div>
+  
+  <div id="loading" class="loading">
+    <div>Loading usage data...</div>
+  </div>
+  
+  <div id="content" style="display: none;">
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-value" id="total-sessions">0</div>
+        <div class="stat-label">Sessions Today</div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-value" id="total-energy">0 Wh</div>
+        <div class="stat-label">Energy Consumed</div>
+      </div>
+
+      <div class="stat-card">
+      <div class="stat-value" id="total-water">0 ml</div>
+      <div class="stat-label">Water Used</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-value" id="total-tokens">0</div>
+        <div class="stat-label">Tokens Processed</div>
+      </div>
+    </div>
+    
+    <div class="platforms">
+      <div class="platform">
+        <span class="platform-name">Claude</span>
+        <span class="platform-sessions" id="claude-count">0 sessions</span>
+      </div>
+      <div class="platform">
+        <span class="platform-name">ChatGPT</span>
+        <span class="platform-sessions" id="chatgpt-count">0 sessions</span>
+      </div>
+      <div class="platform">
+        <span class="platform-name">Gemini</span>
+        <span class="platform-sessions" id="gemini-count">0 sessions</span>
+      </div>
+    </div>
+  </div>
+  
   <script src="popup.js"></script>
 </body>
 </html>
