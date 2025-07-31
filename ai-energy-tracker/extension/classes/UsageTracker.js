@@ -29,7 +29,8 @@ class UsageTracker {
     usage.tokens += tokenCount;
     
     const platform = this.platformRegistry.getPlatform(platformKey);
-    usage.energy += platform.calculateEnergy(tokenCount);
+    usage.energy  += platform.calculateEnergy(tokenCount);
+    usage.water   += platform.calculateWater(tokenCount);
     
     this.saveToStorage();
   }
