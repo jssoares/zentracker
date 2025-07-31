@@ -14,12 +14,14 @@ class PlatformRegistry {
     
     this.platforms.set('chatgpt', new AIPlatform(
       'ChatGPT', 'chat.openai.com', 0.0003,
-      ['/backend-api/conversation', '/backend-api/chat']
+      ['/backend-api/conversation', '/backend-api/chat'],
+      0.002
     ));
     
     this.platforms.set('gemini', new AIPlatform(
       'Gemini', 'gemini.google.com', 0.0004,
-      ['/api/generate', '/api/chat']
+      ['/api/generate', '/api/chat'],
+      0.002
     ));
   }
 

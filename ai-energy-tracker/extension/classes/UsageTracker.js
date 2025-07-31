@@ -83,8 +83,9 @@ class UsageTracker {
       if (dayData[key]) {
         sanitized[key] = {
           sessions: Math.max(0, Number(dayData[key].sessions) || 0),
-          tokens: Math.max(0, Number(dayData[key].tokens) || 0),
-          energy: Math.max(0, Number(dayData[key].energy) || 0)
+          tokens:   Math.max(0, Number(dayData[key].tokens)   || 0),
+          energy:   Math.max(0, Number(dayData[key].energy)   || 0),
+          water:    Math.max(0, Number(dayData[key].water)    || 0),
         };
       }
     }
@@ -100,9 +101,9 @@ class UsageTracker {
   initializeTodayIfNeeded() {
     if (!this.dailyUsage[this.today]) {
       this.dailyUsage[this.today] = {
-        claude: { sessions: 0, tokens: 0, energy: 0 },
-        chatgpt: { sessions: 0, tokens: 0, energy: 0 },
-        gemini: { sessions: 0, tokens: 0, energy: 0 }
+        claude:  { sessions: 0, tokens: 0, energy: 0, water: 0 },
+        chatgpt: { sessions: 0, tokens: 0, energy: 0, water: 0 },
+        gemini:  { sessions: 0, tokens: 0, energy: 0, water: 0 }
       };
     }
   }
