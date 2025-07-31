@@ -3,8 +3,8 @@ class SecurityConfig {
   static get ALLOWED_ORIGINS() {
     return [
       'https://claude.ai',
-      'https://chat.openai.com', 
-      'https://gemini.google.com'
+      'https://chatgpt.com',
+      'https://gemini.google.com',
     ];
   }
 
